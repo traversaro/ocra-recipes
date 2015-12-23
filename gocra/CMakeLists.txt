@@ -13,6 +13,8 @@ add_library(${lib_name} ${gocra_srcs})
 
 target_link_libraries(  ${lib_name}
                         ${Boost_LIBRARIES}
+                        ocra_control
+                        quadprog
                      )
 
 

@@ -34,7 +34,7 @@ IF(SMLT_FOUND)
  LIST(APPEND link_libs ${SMLT_LIBRARIES})
 ENDIF()
 
-TARGET_LINK_LIBRARIES(${lib_name} ${link_libs})
+TARGET_LINK_LIBRARIES(${lib_name} ${link_libs} ocra_control quadprog)
 
 install(DIRECTORY include
         DESTINATION ${CMAKE_INSTALL_PREFIX}

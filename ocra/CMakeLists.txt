@@ -8,12 +8,15 @@ file(GLOB optim_srcs src/optim/*.cpp)
 add_library(ocra_control ${control_srcs})
 add_library(ocra_optim ${optim_srcs})
 
-target_link_libraries(ocra_control
-    ${Boost_LIBRARIES}
-    )
 target_link_libraries(ocra_optim
     ${Boost_LIBRARIES}
     )
+
+target_link_libraries(ocra_control
+    ${Boost_LIBRARIES}
+    ocra_optim
+    )
+
 
 install(DIRECTORY include
         DESTINATION ${CMAKE_INSTALL_PREFIX}
